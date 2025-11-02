@@ -1,0 +1,153 @@
+{
+  "type": "object",
+  "title": "ProfitAndLossStatement",
+  "required": [
+    "documentTitle",
+    "documentDate",
+    "accountingMethod",
+    "organizationName",
+    "period",
+    "income",
+    "grossProfit",
+    "expenses",
+    "netOrdinaryIncome",
+    "netIncome"
+  ],
+  "properties": {
+    "income": {
+      "type": "object",
+      "required": [
+        "hoaIncome",
+        "totalIncome"
+      ],
+      "properties": {
+        "hoaIncome": {
+          "type": "object",
+          "required": [
+            "lateFees",
+            "hoaIncomeOther",
+            "totalHoaIncome"
+          ],
+          "properties": {
+            "lateFees": {
+              "type": "number"
+            },
+            "hoaIncomeOther": {
+              "type": "number"
+            },
+            "totalHoaIncome": {
+              "type": "number"
+            }
+          }
+        },
+        "totalIncome": {
+          "type": "number"
+        }
+      }
+    },
+    "period": {
+      "type": "string"
+    },
+    "expenses": {
+      "type": "object",
+      "required": [
+        "insuranceExpense",
+        "landscapingAndGroundskeeping",
+        "permitExpense",
+        "porteringService",
+        "propertyManagementFees",
+        "propertyTaxes",
+        "repairsAndMaintenance",
+        "telephoneExpense",
+        "utilities",
+        "wasteRemoval",
+        "totalExpense"
+      ],
+      "properties": {
+        "utilities": {
+          "type": "object",
+          "required": [
+            "drainageFee",
+            "exteriorElectricalLights",
+            "totalUtilities"
+          ],
+          "properties": {
+            "drainageFee": {
+              "type": "number"
+            },
+            "totalUtilities": {
+              "type": "number"
+            },
+            "exteriorElectricalLights": {
+              "type": "number"
+            }
+          }
+        },
+        "totalExpense": {
+          "type": "number"
+        },
+        "wasteRemoval": {
+          "type": "number"
+        },
+        "permitExpense": {
+          "type": "number"
+        },
+        "propertyTaxes": {
+          "type": "number"
+        },
+        "insuranceExpense": {
+          "type": "number"
+        },
+        "porteringService": {
+          "type": "number"
+        },
+        "telephoneExpense": {
+          "type": "object",
+          "required": [
+            "answeringService",
+            "totalTelephoneExpense"
+          ],
+          "properties": {
+            "answeringService": {
+              "type": "number"
+            },
+            "totalTelephoneExpense": {
+              "type": "number"
+            }
+          }
+        },
+        "repairsAndMaintenance": {
+          "type": "number"
+        },
+        "propertyManagementFees": {
+          "type": "number"
+        },
+        "landscapingAndGroundskeeping": {
+          "type": "number"
+        }
+      }
+    },
+    "netIncome": {
+      "type": "number"
+    },
+    "grossProfit": {
+      "type": "number"
+    },
+    "documentDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "documentTitle": {
+      "type": "string"
+    },
+    "accountingMethod": {
+      "type": "string"
+    },
+    "organizationName": {
+      "type": "string"
+    },
+    "netOrdinaryIncome": {
+      "type": "number"
+    }
+  }
+}

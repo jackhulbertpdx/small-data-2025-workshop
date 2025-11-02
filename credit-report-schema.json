@@ -1,0 +1,477 @@
+{
+  "type": "object",
+  "title": "Credit Report",
+  "required": [
+    "reportConfirmation",
+    "summary",
+    "creditAccounts",
+    "otherItems",
+    "installmentAccounts",
+    "personalInformation",
+    "inquiries",
+    "publicRecords",
+    "collections",
+    "disputeFileInformation",
+    "rightsUnderFCRA",
+    "rightsUnderStateLaw"
+  ],
+  "properties": {
+    "summary": {
+      "type": "object",
+      "required": [
+        "reportDate",
+        "creditFileStatus",
+        "alertContacts",
+        "averageAccountAge",
+        "lengthOfCreditHistory",
+        "accountsWithNegativeInformation",
+        "oldestAccount",
+        "mostRecentAccount"
+      ],
+      "properties": {
+        "reportDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "alertContacts": {
+          "type": "integer"
+        },
+        "oldestAccount": {
+          "type": "string"
+        },
+        "creditFileStatus": {
+          "type": "string"
+        },
+        "averageAccountAge": {
+          "type": "string"
+        },
+        "mostRecentAccount": {
+          "type": "string"
+        },
+        "lengthOfCreditHistory": {
+          "type": "string"
+        },
+        "accountsWithNegativeInformation": {
+          "type": "integer"
+        }
+      }
+    },
+    "inquiries": {
+      "type": "object",
+      "properties": {
+        "hardInquiries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "date": {
+                "type": "string"
+              },
+              "company": {
+                "type": "string"
+              },
+              "requestOriginator": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "softInquiries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "date": {
+                "type": "string"
+              },
+              "company": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "otherItems": {
+      "type": "object",
+      "properties": {
+        "inquiries": {
+          "type": "integer"
+        },
+        "collections": {
+          "type": "integer"
+        },
+        "publicRecords": {
+          "type": "integer"
+        },
+        "mostRecentInquiry": {
+          "type": "string"
+        },
+        "consumerStatements": {
+          "type": "integer"
+        },
+        "personalInformation": {
+          "type": "integer"
+        }
+      }
+    },
+    "collections": {
+      "type": "integer"
+    },
+    "publicRecords": {
+      "type": "object",
+      "properties": {
+        "liens": {
+          "type": "integer"
+        },
+        "judgments": {
+          "type": "integer"
+        },
+        "bankruptcies": {
+          "type": "integer"
+        }
+      }
+    },
+    "creditAccounts": {
+      "type": "object",
+      "properties": {
+        "accountTypes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "open": {
+                "type": "integer"
+              },
+              "payment": {
+                "type": "string"
+              },
+              "available": {
+                "type": "string"
+              },
+              "accountType": {
+                "type": "string"
+              },
+              "creditLimit": {
+                "type": "string"
+              },
+              "withBalance": {
+                "type": "integer"
+              },
+              "debtToCredit": {
+                "type": "string"
+              },
+              "totalBalance": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "rightsUnderFCRA": {
+      "type": "object",
+      "properties": {
+        "summary": {
+          "type": "string"
+        },
+        "contactInformation": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "agency": {
+                "type": "string"
+              },
+              "contact": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "reportConfirmation": {
+      "type": "string"
+    },
+    "installmentAccounts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "contact": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "phone": {
+                "type": "string"
+              },
+              "address": {
+                "type": "string"
+              }
+            }
+          },
+          "accountNumber": {
+            "type": "string"
+          },
+          "accountStatus": {
+            "type": "string"
+          },
+          "accountDetails": {
+            "type": "object",
+            "properties": {
+              "owner": {
+                "type": "string"
+              },
+              "balance": {
+                "type": "string"
+              },
+              "comments": {
+                "type": "string"
+              },
+              "loanType": {
+                "type": "string"
+              },
+              "dateClosed": {
+                "type": "string"
+              },
+              "dateOpened": {
+                "type": "string"
+              },
+              "highCredit": {
+                "type": "string"
+              },
+              "accountType": {
+                "type": "string"
+              },
+              "creditLimit": {
+                "type": "string"
+              },
+              "dateReported": {
+                "type": "string"
+              },
+              "termDuration": {
+                "type": "integer"
+              },
+              "amountPastDue": {
+                "type": "string"
+              },
+              "monthsReviewed": {
+                "type": "integer"
+              },
+              "termsFrequency": {
+                "type": "string"
+              },
+              "chargeOffAmount": {
+                "type": "string"
+              },
+              "dateOfLastPayment": {
+                "type": "string"
+              },
+              "activityDesignator": {
+                "type": "string"
+              },
+              "balloonPaymentDate": {
+                "type": "string"
+              },
+              "dateOfLastActivity": {
+                "type": "string"
+              },
+              "actualPaymentAmount": {
+                "type": "string"
+              },
+              "balloonPaymentAmount": {
+                "type": "string"
+              },
+              "creditorClassification": {
+                "type": "string"
+              },
+              "dateOfFirstDelinquency": {
+                "type": "string"
+              },
+              "scheduledPaymentAmount": {
+                "type": "string"
+              },
+              "deferredPaymentStartDate": {
+                "type": "string"
+              },
+              "delinquencyFirstReported": {
+                "type": "string"
+              }
+            }
+          },
+          "accountHistory": {
+            "type": "object",
+            "properties": {
+              "balance": {
+                "type": "object",
+                "properties": {
+                  "year": {
+                    "type": "integer"
+                  },
+                  "monthlyBalances": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "highCredit": {
+                "type": "object",
+                "properties": {
+                  "year": {
+                    "type": "integer"
+                  },
+                  "monthlyCredits": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "creditLimit": {
+                "type": "object",
+                "properties": {
+                  "year": {
+                    "type": "integer"
+                  },
+                  "monthlyLimits": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "actualPayment": {
+                "type": "object",
+                "properties": {
+                  "year": {
+                    "type": "integer"
+                  },
+                  "monthlyPayments": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "amountPastDue": {
+                "type": "object",
+                "properties": {
+                  "year": {
+                    "type": "integer"
+                  },
+                  "monthlyAmounts": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "availableCredit": {
+                "type": "object",
+                "properties": {
+                  "year": {
+                    "type": "integer"
+                  },
+                  "monthlyCredits": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "scheduledPayment": {
+                "type": "object",
+                "properties": {
+                  "year": {
+                    "type": "integer"
+                  },
+                  "monthlyPayments": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "activityDesignator": {
+                "type": "object",
+                "properties": {
+                  "year": {
+                    "type": "integer"
+                  },
+                  "monthlyDesignators": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "availableCredit": {
+            "type": "string"
+          },
+          "reportedBalance": {
+            "type": "string"
+          },
+          "debtToCreditRatio": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "personalInformation": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "formerlyKnownAs": {
+          "type": "string"
+        },
+        "ageOrDateOfBirth": {
+          "type": "string"
+        },
+        "socialSecurityNumber": {
+          "type": "string"
+        }
+      }
+    },
+    "rightsUnderStateLaw": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "type": "string"
+        },
+        "notice": {
+          "type": "string"
+        }
+      }
+    },
+    "disputeFileInformation": {
+      "type": "object",
+      "properties": {
+        "disputeMethods": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

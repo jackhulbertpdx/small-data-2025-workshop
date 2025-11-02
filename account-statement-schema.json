@@ -1,0 +1,324 @@
+{
+  "title": "ComprehensiveBankStatement",
+  "type": "object",
+  "properties": {
+    "customer": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "business": {
+      "type": "object",
+      "properties": {
+        "businessName": {
+          "type": "string"
+        },
+        "entityType": {
+          "type": "string"
+        }
+      }
+    },
+    "account": {
+      "type": "object",
+      "properties": {
+        "accountNumber": {
+          "type": "string"
+        },
+        "accountType": {
+          "type": "string"
+        },
+        "bankName": {
+          "type": "string"
+        },
+        "statementPeriodStart": {
+          "type": "string",
+          "format": "date"
+        },
+        "statementPeriodEnd": {
+          "type": "string",
+          "format": "date"
+        },
+        "statementPages": {
+          "type": "object",
+          "properties": {
+            "currentPage": {
+              "type": "integer"
+            },
+            "totalPages": {
+              "type": "integer"
+            }
+          }
+        }
+      },
+      "required": [
+        "accountNumber",
+        "statementPeriodStart",
+        "statementPeriodEnd"
+      ]
+    },
+    "accountSummary": {
+      "type": "object",
+      "properties": {
+        "beginningBalance": {
+          "type": "number"
+        },
+        "endingBalance": {
+          "type": "number"
+        },
+        "totalDeposits": {
+          "type": "number"
+        },
+        "totalCardWithdrawals": {
+          "type": "number"
+        },
+        "totalOtherWithdrawals": {
+          "type": "number"
+        },
+        "numberOfDays": {
+          "type": "integer"
+        }
+      }
+    },
+    "transactions": {
+      "type": "object",
+      "properties": {
+        "depositsAndCredits": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "date": {
+                "type": "string",
+                "format": "date"
+              },
+              "description": {
+                "type": "string"
+              },
+              "referenceNumber": {
+                "type": "string"
+              },
+              "amount": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "date",
+              "description",
+              "amount"
+            ]
+          }
+        },
+        "cardWithdrawals": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "date": {
+                "type": "string",
+                "format": "date"
+              },
+              "description": {
+                "type": "string"
+              },
+              "referenceNumber": {
+                "type": "string"
+              },
+              "amount": {
+                "type": "number"
+              },
+              "cardLastFour": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "date",
+              "description",
+              "amount"
+            ]
+          }
+        },
+        "otherWithdrawals": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "date": {
+                "type": "string",
+                "format": "date"
+              },
+              "description": {
+                "type": "string"
+              },
+              "referenceNumber": {
+                "type": "string"
+              },
+              "amount": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "date",
+              "description",
+              "amount"
+            ]
+          }
+        },
+        "serviceFees": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "date": {
+                "type": "string",
+                "format": "date"
+              },
+              "feeType": {
+                "type": "string"
+              },
+              "amount": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    },
+    "balanceSummary": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "balance": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "date",
+          "balance"
+        ]
+      }
+    },
+    "reconciliationInstructions": {
+      "type": "object",
+      "properties": {
+        "steps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "outstandingDeposits": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "date": {
+                "type": "string",
+                "format": "date"
+              },
+              "amount": {
+                "type": "number"
+              }
+            }
+          }
+        },
+        "outstandingWithdrawals": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "date": {
+                "type": "string",
+                "format": "date"
+              },
+              "amount": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    },
+    "errorResolution": {
+      "type": "object",
+      "properties": {
+        "contactInformation": {
+          "type": "object",
+          "properties": {
+            "phone": {
+              "type": "string"
+            },
+            "mailingAddress": {
+              "type": "string"
+            }
+          }
+        },
+        "requiredInformation": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "consumerTimeLimitDays": {
+          "type": "integer"
+        },
+        "businessTimeLimitDays": {
+          "type": "integer"
+        },
+        "provisionalCreditPolicy": {
+          "type": "string"
+        }
+      }
+    },
+    "reserveLine": {
+      "type": "object",
+      "properties": {
+        "balanceComputationMethod": {
+          "type": "string"
+        },
+        "interestChargePolicy": {
+          "type": "string"
+        },
+        "creditBureauReportingPolicy": {
+          "type": "string"
+        }
+      }
+    },
+    "consumerReportDispute": {
+      "type": "object",
+      "properties": {
+        "contactPhone": {
+          "type": "string"
+        },
+        "mailingAddress": {
+          "type": "string"
+        },
+        "requiredDetails": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "customer",
+    "account",
+    "accountSummary",
+    "transactions"
+  ]
+}

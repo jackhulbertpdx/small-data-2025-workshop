@@ -1,0 +1,14 @@
+Function Name: Financial Document Router
+
+Route 1
+	Name: Profit and Loss Statements
+	Description: Profit and loss statements for companies
+Route 2
+	Name: Account Statements
+	Description: Bank account statements
+Route 3
+	Name: Articles of Incorporation
+	Description: Articles of incorporation of a company
+Route 4
+	Name: Credit Reports
+	Description: Credit reports for individuals or businesses

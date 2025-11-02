@@ -1,0 +1,274 @@
+{
+  "type": "object",
+  "title": "Articles of Incorporation",
+  "required": [
+    "documentTitle",
+    "corporationName",
+    "incorporationDate",
+    "incorporators",
+    "corporationPurpose",
+    "principalOffice",
+    "corporationTerm",
+    "directors",
+    "authorizedCapitalStock",
+    "subscribers",
+    "treasurer",
+    "stockTransferRestriction",
+    "notary",
+    "acknowledgment",
+    "treasurersAffidavit"
+  ],
+  "properties": {
+    "notary": {
+      "type": "object",
+      "required": [
+        "name",
+        "notaryPublicUntil",
+        "ptrNumber",
+        "ibpNumber",
+        "rollNumber"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "ibpNumber": {
+          "type": "string"
+        },
+        "ptrNumber": {
+          "type": "string"
+        },
+        "rollNumber": {
+          "type": "string"
+        },
+        "notaryPublicUntil": {
+          "type": "string",
+          "format": "date"
+        }
+      }
+    },
+    "directors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "nationality",
+          "address"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "nationality": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "treasurer": {
+      "type": "object",
+      "required": [
+        "name",
+        "authorization"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "authorization": {
+          "type": "string"
+        }
+      }
+    },
+    "subscribers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "nationality",
+          "sharesSubscribed",
+          "amountSubscribed"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "nationality": {
+            "type": "string"
+          },
+          "amountSubscribed": {
+            "type": "number"
+          },
+          "sharesSubscribed": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    "documentTitle": {
+      "type": "string"
+    },
+    "incorporators": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "nationality",
+          "address"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "nationality": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "acknowledgment": {
+      "type": "object",
+      "required": [
+        "location",
+        "date",
+        "appearedPersons"
+      ],
+      "properties": {
+        "date": {
+          "type": "string",
+          "format": "date"
+        },
+        "location": {
+          "type": "string"
+        },
+        "appearedPersons": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "ctcNumber",
+              "issueDate",
+              "issuePlace"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "ctcNumber": {
+                "type": "string"
+              },
+              "issueDate": {
+                "type": "string",
+                "format": "date"
+              },
+              "issuePlace": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "corporationName": {
+      "type": "string"
+    },
+    "corporationTerm": {
+      "type": "integer"
+    },
+    "principalOffice": {
+      "type": "string"
+    },
+    "incorporationDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "corporationPurpose": {
+      "type": "string"
+    },
+    "treasurersAffidavit": {
+      "type": "object",
+      "required": [
+        "treasurerName",
+        "subscribedCapitalStock",
+        "paidCapitalStock",
+        "affidavitDate",
+        "notary"
+      ],
+      "properties": {
+        "notary": {
+          "type": "object",
+          "required": [
+            "name",
+            "notaryPublicUntil",
+            "ptrNumber",
+            "ibpNumber",
+            "rollNumber"
+          ],
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "ibpNumber": {
+              "type": "string"
+            },
+            "ptrNumber": {
+              "type": "string"
+            },
+            "rollNumber": {
+              "type": "string"
+            },
+            "notaryPublicUntil": {
+              "type": "string",
+              "format": "date"
+            }
+          }
+        },
+        "affidavitDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "treasurerName": {
+          "type": "string"
+        },
+        "paidCapitalStock": {
+          "type": "number"
+        },
+        "subscribedCapitalStock": {
+          "type": "number"
+        }
+      }
+    },
+    "authorizedCapitalStock": {
+      "type": "object",
+      "required": [
+        "totalAmount",
+        "shares",
+        "parValue"
+      ],
+      "properties": {
+        "shares": {
+          "type": "integer"
+        },
+        "parValue": {
+          "type": "number"
+        },
+        "totalAmount": {
+          "type": "number"
+        }
+      }
+    },
+    "stockTransferRestriction": {
+      "type": "string"
+    }
+  }
+}
