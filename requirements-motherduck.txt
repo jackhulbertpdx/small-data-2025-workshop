@@ -1,0 +1,5 @@
+# Requirements for load_data.py script
+# Install with: pip install -r requirements-motherduck.txt
+
+duckdb>=0.9.0
+requests>=2.31.0
