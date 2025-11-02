@@ -4,7 +4,7 @@ This script loads transformation data from the bem API into MotherDuck for analy
 
 ## Prerequisites
 
-1. **bem API Key**: You need an API key from bem.ai
+1. **bem API Key**: Sign up at [bem.ai](https://app.bem.ai)
 2. **MotherDuck Account**: Sign up at [motherduck.com](https://motherduck.com)
 3. **Python 3.7+**: Ensure Python is installed
 
@@ -60,13 +60,13 @@ This will open a browser for authentication, and the token will be stored locall
 Run the script with a function name:
 
 ```bash
-python load_data.py <function-name>
+python load-data.py <function-name>
 ```
 
 ### Example
 
 ```bash
-python load_data.py invoice-processor
+python load-data.py invoice-processor
 ```
 
 ## What the Script Does
@@ -127,33 +127,6 @@ The script includes comprehensive error handling for:
 - Network errors
 - MotherDuck connection issues
 - Data insertion errors
-
-## Example Output
-
-```
-Connecting to bem API...
-Fetching transformations for function 'invoice-processor'...
-✓ Fetched 150 transformations
-Connecting to MotherDuck...
-✓ Connected to MotherDuck
-Creating table 'invoice_processor' in MotherDuck...
-✓ Created table 'invoice_processor' with 150 records
-
-Querying data from 'invoice_processor'...
-
-================================================================================
-Results from table 'invoice_processor' (150 rows):
-================================================================================
-
-transformation_id | reference_id | created_at | function_name | invoice_number | amount
-------------------------------------------------------------------------------------
-tr_2bxoJPNdSD4L... | ref_001 | 2024-01-15T10:30:00Z | invoice-processor | INV-001 | 1500.00
-tr_3cxpKQOeTE5M... | ref_002 | 2024-01-15T10:31:00Z | invoice-processor | INV-002 | 2500.00
-...
-
-✓ Closing MotherDuck connection...
-Done!
-```
 
 ## Troubleshooting
 
@@ -229,4 +202,3 @@ COPY (SELECT * FROM invoice_processor) TO 'output.parquet' (FORMAT PARQUET);
 For issues with:
 - **bem API**: Check docs.bem.ai or contact bem support
 - **MotherDuck**: Check motherduck.com/docs or contact MotherDuck support
-- **This script**: Open an issue in the bem repository
